@@ -37,7 +37,7 @@ jobs:
       continue-on-error: false
       with:          
         s3_bucket: codeguru-reviewer-demo-amazon-1981805
-        build_path: ./target/classes
+        build_path: target
 
     - name: Store SARIF file
       uses: actions/upload-artifact@v2
