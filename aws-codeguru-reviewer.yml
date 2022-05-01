@@ -15,7 +15,7 @@ version: 1.0
 # in the tst directory, and all JSON files in a sub-directory under a directory prefixed with some-.
 # Replace with your own list of files and directories that you want CodeGuru Reviewer to exclude.
 # We recommend that you use a schema validator to confirm that the YAML syntax is valid.
-
+access_key_id: AKIAIEBRQC6XJRYKOXHQ
 excludeFiles:
 - 'src/some-package/**'
 - 'src/some-*/*.json'
