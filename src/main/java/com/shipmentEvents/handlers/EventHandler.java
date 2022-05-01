@@ -71,7 +71,6 @@ public class EventHandler implements RequestHandler<ScheduledEvent, String> {
     }
 
     public ShopifyShop connectToShopify(String subdomain) {
-        final String token8 = "shpss_sdkfhkjh134134141341344133412312345678";
         final String token = "shpss_sdkfhkjh134134141341344133412312345678";
         final ShopifySdk shopifySdk = ShopifySdk.newBuilder()
              .withSubdomain(subdomain)
