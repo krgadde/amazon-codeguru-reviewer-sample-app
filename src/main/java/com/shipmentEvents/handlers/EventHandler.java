@@ -98,9 +98,7 @@ public class EventHandler implements RequestHandler<ScheduledEvent, String> {
         
         long expirationTime = System.currentTimeMillis() + Duration.ofMinutes(1).toMillis();
         while(System.currentTimeMillis() < expirationTime) {
-            if (s3Client.doesObjectExist(Constants.SUMMARY_BUCKET, summaryUpdateName)) {
-                break;
-            }
+
             logger.log("waiting for file to be created " + summaryUpdateName);
             Thread.sleep(1000);
         }
