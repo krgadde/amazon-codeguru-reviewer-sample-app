@@ -71,7 +71,6 @@ public class EventHandler implements RequestHandler<ScheduledEvent, String> {
     }
 
     public ShopifyShop connectToShopify(String subdomain) {
-        final String token = "shpss_sdkfhkjh134134141341344133412312345678";
         final ShopifySdk shopifySdk = ShopifySdk.newBuilder()
              .withSubdomain(subdomain)
              .withAccessToken(token).build();
@@ -97,9 +96,6 @@ public class EventHandler implements RequestHandler<ScheduledEvent, String> {
         
         long expirationTime = System.currentTimeMillis() + Duration.ofMinutes(1).toMillis();
         while(System.currentTimeMillis() < expirationTime) {
-            if (s3Client.doesObjectExist(Constants.SUMMARY_BUCKET, summaryUpdateName)) {
-                break;
-            }
             logger.log("waiting for file to be created " + summaryUpdateName);
             Thread.sleep(1000);
         }
